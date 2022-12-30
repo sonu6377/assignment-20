@@ -1,0 +1,194 @@
+/* 1
+#include<stdio.h>
+void swap(int *p,int *q);
+int main()
+{
+    int a,b;
+    printf(" enter the two numbers ");
+    scanf("%d%d",&a,&b);
+    swap(&a,&b);
+    printf(" a=%d  b=%d",a,b);
+    return 0;
+}
+void swap(int *p,int *q)
+{
+  int t;
+  t=*p;
+  *p=*q;
+  *q=t;
+}*/
+/* 2
+#include<stdio.h>
+void swap(char **x , char **y)
+{
+    char *temp;
+    temp=*x;
+    *x=*y;
+    *y=temp;
+}
+int main()
+{
+    char *a[20],*b[20];
+    printf(" enter the 2 string ");
+    gets(a);
+    gets(b);
+    swap(a,b);
+    printf("%s %s",a,b);
+    return 0;
+}*/
+/* 3
+#include<stdio.h>
+void sort(int *p,int size);
+int main()
+{
+    int a[10],i;
+    printf(" enter the arrays elements ");
+    for(i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    sort(a,10);
+    for(i=0;i<10;i++)
+        printf(" %d ",a[i]);
+    return 0;
+
+}
+void sort(int *p,int size)
+{
+    int i,j,t;
+    for(i=0;i<size;i++)
+    {
+        for(j=i+1;j<size;j++)
+        {
+            if(p[i]>p[j])
+            {
+                t=p[i];
+                p[i]=p[j];
+                p[j]=t;
+            }
+        }
+    }
+}*/
+/* 4
+#include<stdio.h>
+int main()
+{
+    int x=10,*p,**q,***r;
+    p=&x;
+    q=&p;
+    r=&q;
+    printf("\n %d  %d  %d  %d \n",x,*p,**q,***r);
+    printf("\n %d  %d  %d  %d \n",&x,p,*q,**r);
+    printf("\n %d  %d  %d   \n",&p,q,*r);
+    printf("\n %d  %d  \n",&q,r);
+    printf("\n %d   \n",&r);
+    return 0;
+}*/
+
+/* 5
+#include<stdio.h>
+int main()
+{
+    int a,b,*p,*q;
+    printf(" enter the two numbers ");
+    scanf("%d%d",&a,&b);
+    p=&a;
+    q=&b;
+    if(*p>*q)
+        printf(" maximum numbers %d ",*p);
+    else
+        printf(" maximum numbers %d ",*q);
+    return 0;
+}*/
+/* 6
+#include<stdio.h>
+int main()
+{
+    char a[20],*p;
+    int i;
+    printf(" enter the your choice string ");
+    gets(a);
+    p=a;
+    for(i=0;*(p+i);i++);
+    printf("\n %d ",i);
+    return 0;
+}*/
+
+/* 7
+#include<stdio.h>
+int main()
+{
+    int vowel=0,consonants=0,i;
+    char str[20],*p;
+    printf(" enter the your choice string ");
+    gets(str);
+    p=str;
+   while(*p!='\0')
+    {
+        if(*p=='a' || *p=='e' || *p=='i' || *p=='o' || *p=='u' ||*p=='A' || *p=='E' || *p=='I' || *p=='O' || *p=='U'  )
+         vowel++;
+        else
+            consonants++;
+            p++;
+    }
+    printf(" vowel=%d \n consonants=%d",vowel,consonants);
+    return 0;
+}*/
+/* 8
+#include<stdio.h>
+int main()
+{
+    int a[10],sum=0,*p,i;
+    printf(" enter the arrays elements ");
+    for(i=0;i<10;i++)
+        scanf("%d",&a[i]);
+    p=a;
+    for(i=0;i<10;i++)
+    {
+        sum=sum+*(p+i);
+    }
+    printf(" sum of all elements %d ",sum);
+    return 0;
+}*/
+/* 9
+ #include<stdio.h>
+ int main()
+ {
+     int a[10],size,*p,i;
+     p=a;
+     printf(" enter the size of an arrays ");
+     scanf("%d",&size);
+     printf(" enter the arrays elements ");
+     for(i=0;i<size;i++)
+        scanf("%d",&a[i]);
+     p=&a[size-1];
+     for(i=size-1;i>=0;i--)
+     {
+         printf(" %d ",*p);
+         p--;
+     }
+     return 0;
+ }*/
+
+10
+ #include<stdio.h>
+ #include<string.h>
+ void reverse(char *ptr)
+ {
+     int i,l,temp;
+     l=strlen(ptr);
+     for(i=0;i<l/2;i++)
+     {
+         temp=ptr[i];
+         ptr[i]=ptr[l-1-i];
+         ptr[l-1-i]=temp;
+     }
+ }
+ int main()
+ {
+     char str[20];
+     printf(" enter the your choice string ");
+     fgets(str,20,stdin);
+     reverse(str);
+     printf(" \n reverse string \n");
+     printf(" %s ",str);
+     return 0;
+ }
